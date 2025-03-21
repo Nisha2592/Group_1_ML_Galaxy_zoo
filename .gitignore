@@ -207,3 +207,5 @@ pyrightconfig.json
 
 #ignore the data folder 
 data/
+
+test*
