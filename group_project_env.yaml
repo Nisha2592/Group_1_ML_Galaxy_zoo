@@ -201,4 +201,3 @@ dependencies:
       - seaborn==0.13.2
       - statsmodels==0.14.4
       - threadpoolctl==3.6.0
-prefix: /home/christian/miniconda3/envs/group_project_env
