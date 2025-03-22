@@ -62,7 +62,7 @@ def write_file_list(total_data, overwrite = False):
             )
 
         # Path in leonardo
-        folder_path = "/leonardo_work/ICT24_MHPC/data_projects/Project_1/data/images/"
+        folder_path = "leonardo_work/ICT24_MHPC/data_projects/Project_1/data/images/"
 
         # Open the file_list.txt
         file = open("file_list.txt", "w")
