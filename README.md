@@ -17,7 +17,6 @@
 In order to train a classification model and predict the labels of the images we proceed doing the following steps:
 
 1. Fetch the data from Leonardo (check [How to get the data](#how-to-get-the-data) section)
-    - 
 1. Convert array of pixels in rows of a tabular dataset, using single pixels as feature columns and the intensities as values measured.
 1. Perform EDA and feature preprocessing.
 1. Estimate the symmetry of the preprocessed images with respect to 12 axes and add this info to the original data.
@@ -47,7 +46,7 @@ We want to get a subset of the data from the path using the `scp` command from t
 Then, you just need to run the following command (after login leonardo and have the certificate)
 
 ```bash
-cat file_list.txt | xargs -I {} scp leonardo_alias:{} ./data/images
+rsync -av --progress --ignore-existing --files-from=file_list.txt leonardo_alias:/ ./data/images
 ```
 
 where `leonardo_alias` is the alias that you have on the `config` file inside `~/.ssh/` folder, i.e, the alias that you use to `ssh` leonardo. For getting the other 2 `.csv` files, you can execute the following commands:
