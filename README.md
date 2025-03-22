@@ -86,7 +86,7 @@ We want to get a subset of the data from the path using the `scp` command from t
 Then, you just need to run the following command (after login leonardo and have the certificate)
 
 ```bash
-rsync -av --progress --ignore-existing --files-from=file_list.txt leonardo_alias:/ ./data/images
+rsync -av --progress --ignore-existing --files-from=file_list.txt --no-relative leonardo:/ ./data/images
 ```
 
 where `leonardo_alias` is the alias that you have on the `config` file inside `~/.ssh/` folder, i.e, the alias that you use to `ssh` leonardo. For getting the other 2 `.csv` files, you can execute the following commands:
