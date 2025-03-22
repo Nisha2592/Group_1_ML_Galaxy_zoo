@@ -14,18 +14,58 @@
 
 ## Task and workflow
 
+To train a classification model and predict the labels of the images, we follow these steps:
+
+1. **Random Image Selection**
+   - We start by randomly selecting subset of image from the image dataset.
+
+2. **Convert Images into Tabular Format** (Tica Christian)
+   - Convert arrays of pixels into tabular data by treating each pixel as a feature column, with pixel intensity values as the data points.
+
+3. **EDA and Feature Preprocessing** (Nisha)
+   - Perform Exploratory Data Analysis (EDA) to understand the dataset distribution, check for missing values, normalize pixel values.
+
+4. **Dimensionality Reduction** (Nisha)
+   - Test how much we can reduce the dimensionality of the problem using one of the algorithms (PCA, kPCA, etc.).
+
+5. **Symmetry Estimation** (Moreno Triana Jhon Sebastián)
+   - Estimate the symmetry of the preprocessed images with respect to **12 axes** and add this information to the dataset.
+
+6. **Cluster Analysis**
+   - Determine how many clusters can be associated with the joint distribution of the data points using **t-SNE** or **UMAP**.
+
+7. **Model Selection**
+   - Build the classifier using **Random Forest** (experimenting with different tree depths and numbers) or **SVC** (Support Vector Classifier).
+
+8. **Model Training**
+   - Train the classifier on the processed dataset.
+
+9. **Prediction**
+   - Use the trained classifier to predict class labels for the test images.
+
+## Team Contributions
+
+### **1. Tica Christian - Pixel-to-Tabular Conversion**
+Tica Christian was responsible for converting the raw image data into a structured tabular dataset. Each image was flattened into individual pixel intensity values, treating each pixel as a separate feature. This transformation allows us to apply machine learning techniques directly to numerical data instead of raw images.
+
+### **2. Nisha - EDA, Preprocessing, and Dimensionality Reduction**
+Nisha conducted Exploratory Data Analysis (EDA) to understand the distribution of pixel intensities, detect missing values, and normalize or standardize features where necessary. The preprocessing steps included:
+
+1. Encoding categorical variables to make them suitable for machine learning.
+
+2. Applying VarianceThreshold to remove low-variance features.
+
+3. Computing Mutual Information Scores to evaluate feature importance.
+
+4. Applying PCA to reduce the dataset's dimensionality while preserving meaningful variance.
+
+### **3. Moreno Triana Jhon Sebastián - Symmetry Estimation**
+Moreno Triana Jhon Sebastián estimated the **symmetry of each image across 12 different axes**. This involved analyzing how similar an image is when mirrored along different orientations.
+
+
 In order to train a classification model and predict the labels of the images we proceed doing the following steps:
 
-1. Fetch the data from Leonardo (check [How to get the data](#how-to-get-the-data) section)
-1. Convert array of pixels in rows of a tabular dataset, using single pixels as feature columns and the intensities as values measured.
-1. Perform EDA and feature preprocessing.
-1. Estimate the symmetry of the preprocessed images with respect to 12 axes and add this info to the original data.
-1. Test how much you can reduce the dimensions of the problem with one algorithm between (PCA, kPCA ..).
-1. Check how many clusters can be associated to the data points joint distribution using tSNE or UMAP.
-1. Build the classifier using Random Forest (play with different depth and number of trees) or SVC.
-1. Train the classifier.
-1. Predict the class labels.
-
+## Fetch the data from Leonardo (check [How to get the data](#how-to-get-the-data) section)
 
 ## How to get the data 
 
