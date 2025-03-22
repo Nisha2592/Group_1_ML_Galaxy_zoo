@@ -14,7 +14,7 @@ def process_image_dask(image_path):
         img_gray = ImageOps.grayscale(img)
         img_array = np.asarray(img_gray).flatten()
         filename = os.path.basename(image_path)
-        return os.path.splitext(filename)[0], img_array
+        return int(os.path.splitext(filename)[0]), img_array
     except Exception as e:
         print(f"Error processing {image_path}: {e}")
         return None
@@ -49,7 +49,7 @@ def process_image_seq(image_dir):
             image_data.append(img_array)
 
             # Extract the base name without the extension
-            image_name = os.path.splitext(filename)[0] # Get only the root, ie w/o extension
+            image_name = int(os.path.splitext(filename)[0]) # Get only the root, ie w/o extension
     
             image_names.append(image_name)
 
