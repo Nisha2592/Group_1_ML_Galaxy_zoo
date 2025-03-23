@@ -46,7 +46,13 @@ To train a classification model and predict the labels of the images, we follow 
 
 ### Team Contributions
 
-> **Tica Christian - Pixel-to-Tabular Conversion**
+> **Tica Christian - Prepared and merge merge dataframes to produce final Pixel-to-Tabular Conversion**
+
+> **Performed cluster analysis with t-SNE**
+ 
+> **Performed first iteration on dimenionality reduction with PCA**
+ 
+> **Assisted in Model Selectionn, training, and prdiction**
 
 Tica Christian was responsible for converting the raw image data into a structured tabular dataset. Each image was flattened into individual pixel intensity values, treating each pixel as a separate feature. This transformation allows us to apply machine learning techniques directly to numerical data instead of raw images.
 
