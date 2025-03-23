@@ -1,8 +1,16 @@
 # Galaxy zoo classifier
 
-- Moreno Triana Jhon Sebastián
-- Nisha
-- Tica Christian
+<a href = "https://github.com/Jh0mpis"><img src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/18cef78d-8d34-4cfb-b9c7-662588f56c7a/de5p4qp-e0a4b0c8-e797-4bbf-8b4a-4d5523871a2a.jpg/v1/fill/w_1280,h_1768,q_75,strp/guts___berserker_armor_by_stephane_piovan_draw_de5p4qp-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTc2OCIsInBhdGgiOiJcL2ZcLzE4Y2VmNzhkLThkMzQtNGNmYi1iOWM3LTY2MjU4OGY1NmM3YVwvZGU1cDRxcC1lMGE0YjBjOC1lNzk3LTRiYmYtOGI0YS00ZDU1MjM4NzFhMmEuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.MsRnw-FYOYxWdtgJBJQktAgxvPV3hWjwMsBMY7-1Q5A" width="40rm"> </a> **Moreno Triana Jhon Sebastián**
+
+<a href = "https://github.com/Nisha2592"><img src="https://www.flags.co.uk/client/uploads/5/netherlands.png" width="40rm"> </a> **Nisha**
+
+<a href = "https://github.com/cristiano-mhpc" ><img src = "https://icons.iconarchive.com/icons/hektakun/pokemon/72/006-Charizard-icon.png" width="40rm"></a> **Tica Christian**
+
+> [!IMPORTANT]
+> If you want to check the report is on the [Project1.ipynb](Project1.ipynb) notebook
+
+
+---
 
 ## Index
 
@@ -25,6 +33,9 @@ To train a classification model and predict the labels of the images, we follow 
 
 3. **EDA and Feature Preprocessing**
    - Perform Exploratory Data Analysis (EDA) to understand the dataset distribution, check for missing values, normalize pixel values.
+  
+1. **Noise Reduction**
+    - Analyzing the images we can conclude that we are interested on the brightest region, the we can depreciate the darkest areas and help to reduce the dimensionality.
 
 4. **Dimensionality Reduction**
    - Test how much we can reduce the dimensionality of the problem using one of the algorithms (PCA, kPCA, etc.).
@@ -46,32 +57,44 @@ To train a classification model and predict the labels of the images, we follow 
 
 ### Team Contributions
 
-> **Tica Christian - Prepared and merge merge dataframes to produce final Pixel-to-Tabular Conversion**
+The project aims to get a Random Forest classifier model to classify galxy images from the [Galaxy Zoo 2 project](https://data.galaxyzoo.org/#section-7) by doing all the usual steps on a machine learning (ML) project.
 
-> **Performed cluster analysis with t-SNE**
- 
-> **Performed first iteration on dimenionality reduction with PCA**
- 
-> **Assisted in Model Selectionn, training, and prdiction**
+1. **Random Image Selection** (Moreno Triana Jhon Sebastián)
+    - Jhon analyze the the data an select the subset of the images for training the model and classify.
+    - Analyzing the csv related with the classes and selecting a uniform number of images of each class.
+    - Set the structure of the project in order to start the project.
 
-Tica Christian was responsible for converting the raw image data into a structured tabular dataset. Each image was flattened into individual pixel intensity values, treating each pixel as a separate feature. This transformation allows us to apply machine learning techniques directly to numerical data instead of raw images.
+1. **Convert Images into Tabular Format** (Tica Christian)
+    - Christian extract the image information of the images and construct the dataframes.
+    - Convert arrays of pixels into tabular data by treating each pixel as a feature column, with pixel intensity values as the data points.
+    - Connect each image with each classification.
 
-> **Nisha - EDA, Preprocessing, and Dimensionality Reduction**
+3. **EDA and Feature Preprocessing** (Nisha)
+    - Nisha conducted Exploratory Data Analysis (EDA) to understand the distribution of pixel intensities, detect missing values, and normalize or standardize features where necessary. The preprocessing steps included:
+    - Encoding categorical variables to make them suitable for machine learning.
+    - Applying VarianceThreshold to remove low-variance features.
+    - Computing Mutual Information Scores to evaluate feature importance.
 
-Nisha conducted Exploratory Data Analysis (EDA) to understand the distribution of pixel intensities, detect missing values, and normalize or standardize features where necessary. The preprocessing steps included:
+5. **Symmetry Estimation** (Moreno Triana Jhon Sebastián)
+    - Jhon made the code for extracting the symmetry information of each image.
+    - Estimate the symmetry of the preprocessed images with respect to **12 axes** and add this information to the dataset.
+  
+1. **Noise Reduction** (Moreno Triana Jhon Sebastián)
+    - Analyzing the images we can conclude that we are interested on the brightest region, the we can depreciate the darkest areas and help to reduce the dimensionality.
 
-> **Encoding categorical variables to make them suitable for machine learning.**
+4. **Dimensionality Reduction** (Nisha and Christian)
+   - Test how much we can reduce the dimensionality of the problem using one of the algorithms (PCA, kPCA, etc.).
 
-> **Applying VarianceThreshold to remove low-variance features.**
+6. **Cluster Analysis** (Tica Christian)
+   - Determine how many clusters can be associated with the joint distribution of the data points using **t-SNE**.
 
-> **Computing Mutual Information Scores to evaluate feature importance.**
+7. **Model Selection and Model Training** (All the team)}
+   - Build the classifier using **Random Forest** (experimenting with different tree depths and numbers).
+   - Train the classifier on the processed dataset using multiple hyperparameters.
 
-> **Applying PCA to reduce the dataset's dimensionality while preserving meaningful variance.**
-
-> **Moreno Triana Jhon Sebastián - Symmetry Estimation**
-
-Moreno Triana Jhon Sebastián estimated the **symmetry of each image across 12 different axes**. This involved analyzing how similar an image is when mirrored along different orientations.
-
+9. **Prediction** (All the team)
+   - Use the trained classifier to predict class labels for the test images.
+   - Analysis of the results.
 
 ## How to get the data 
 
