@@ -6,12 +6,12 @@ import pandas as pd
 def gaussian(x, A, mu, sigma):
     return A * np.exp(-((x - mu) ** 2) / (2 * sigma ** 2))
 
-def cut_images(data_frame):
-    images_columns = [str(i) for i in range(424*424)]
+def cut_images(data_frame, border):
+    images_columns = [str(i) for i in range((424-2*border)*(424-2*border))]
     numpy_df = data_frame[images_columns].to_numpy()
 
-    images_array = numpy_df.reshape((data_frame.shape[0], 424, 424))
-    index = np.linspace(0, 424 - 1, 424)
+    images_array = numpy_df.reshape((data_frame.shape[0], 424 - 2*border, 424-2*border))
+    index = np.linspace(0, 424 - 2*border - 1, 424 - 2*border)
 
     for image in images_array:
         rows_mean_intensity = np.sum(image, axis = 1)

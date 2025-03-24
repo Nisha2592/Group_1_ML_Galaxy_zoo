@@ -8,11 +8,11 @@ from dask import delayed
 
 
 @delayed
-def process_image_dask(image_path):
+def process_image_dask(image_path, border):
     try:
         img = Image.open(image_path)
         img_gray = ImageOps.grayscale(img)
-        img_array = np.asarray(img_gray).flatten()
+        img_array = np.asarray(img_gray)[border:-border, border:-border].flatten()
         filename = os.path.basename(image_path)
         return int(os.path.splitext(filename)[0]), img_array
     except Exception as e:
@@ -34,7 +34,7 @@ def process_image_seq(image_dir):
     image_names = []
 
     # Iterate over all files in the directory 
-    for filename in os.listdir(image_dir):
+    for filename in os.listdir(image_dir, border):
         if filename.endswith(('.jpg', '.png')): #filter the image files
             image_path = os.path.join(image_dir, filename)
 
@@ -43,7 +43,7 @@ def process_image_seq(image_dir):
             img_gray = ImageOps.grayscale(img)
 
             # Convert to a numpy array and flatter it to 1D
-            img_array = np.asarray(img_gray).flatten()
+            img_array = np.asarray(img_gray)[border:-border, border:-border].flatten()
 
             #store the image data and filename
             image_data.append(img_array)
