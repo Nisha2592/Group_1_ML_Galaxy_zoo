@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #SBATCH -A ict25_mhpc_0
-#SBATCH --qos=boost_qos_dbg
+##SBATCH --qos=boost_qos_dbg
 #SBATCH -p boost_usr_prod
 #SBATCH --time 00:30:00       # format: HH:MM:SS
 #SBATCH -N 1
