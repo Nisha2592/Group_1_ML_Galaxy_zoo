@@ -15,4 +15,4 @@ module load anaconda3/2023.09-0
 
 conda activate galaxy
 
-python3 project1.py
+python project1.py
