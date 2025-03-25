@@ -3,7 +3,7 @@ import subprocess
 from src.get_files import write_file_list
 
 # Re-writing the file_list.txt with the new size
-data_size = 5_000
+data_size = 9_000
 write_file_list(data_size, overwrite=True)
 
 # Run the script

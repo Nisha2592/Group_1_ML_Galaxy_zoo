@@ -1,0 +1,107 @@
+                objid  asset_id   0   1  ...  50173  50174  50175  gz2class
+0  587722981741625481         6   5   5  ...     19     16     14        Er
+1  587722981741822057        13  14   9  ...     15      9      3        Ec
+2  587722981747916983        85   2   2  ...     11     11      7      Sa2l
+3  587722981747982438        88   1   1  ...      8      6      3        Ec
+4  587722982279610435       187  17  14  ...     15     14     12        Ec
+
+[5 rows x 50179 columns]
+gz2class
+Er         1750
+Ec         1750
+S[a-b]     1750
+SB[c-b]    1750
+Name: count, dtype: int64
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 7000 entries, 0 to 6999
+Columns: 50179 entries, objid to gz2class
+dtypes: int64(2), object(1), uint8(50176)
+memory usage: 335.1+ MB
+(7000, 50179)
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 7000 entries, 0 to 6999
+Columns: 50179 entries, objid to gz2class
+dtypes: int64(2), object(1), uint8(50176)
+memory usage: 335.1+ MB
+[1mstd Max:[0m 31.497786801420748 
+[1std min:[0m 2.26719346419348 
+[1std mean:[0m 15.318582881880902 
+[1std std:[0m 8.114023290879867 
+[1std mean - std:[0m 7.2045595910010345
+Shape after removing low-variance features: (7000, 50025)
+Number of features ignored: 166
+Original shape: (7000, 50191), Reduced shape with PCA: (7000, 162)
+Fitting 3 folds for each of 16 candidates, totalling 48 fits
+Best Model Accuracy: 0.6757142857142857
+Best Hyperparameters: {'max_depth': None, 'n_estimators': 500}
+[1m  Train data	  Test data[0m
+[1;34mClass 	[31mCounts[0m	[1;34mClass 	[31mCounts[0m	
+[34mEc	[31m1378	[34mEc	[31m372
+[34mEr	[31m1428	[34mEr	[31m322
+[34mSB[c-b]	[31m1396	[34mSB[c-b]	[31m354
+[34mS[a-b]	[31m1398	[34mS[a-b]	[31m352
+              precision    recall  f1-score   support
+
+          Ec       0.72      0.88      0.80       372
+          Er       0.76      0.74      0.75       322
+     SB[c-b]       0.67      0.62      0.64       354
+      S[a-b]       0.53      0.46      0.49       352
+
+    accuracy                           0.68      1400
+   macro avg       0.67      0.67      0.67      1400
+weighted avg       0.67      0.68      0.67      1400
+
+[1m  Train data	  Test data	  Pred data[0m
+[1mClass 	Counts[0m	[1mClass 	Counts[0m	[1mClass 	Counts[0m	
+[1;34mEc	1378	[1;31mEc	372	[1;32mEc	453
+[1;34mEr	1428	[1;31mEr	322	[1;32mEr	312
+[1;34mSB[c-b]	1396	[1;31mSB[c-b]	354	[1;32mSB[c-b]	329
+[1;34mS[a-b]	1398	[1;31mS[a-b]	352	[1;32mS[a-b]	306
+[CV] END .....................max_depth=10, n_estimators=400; total time=  13.2s
+[CV] END .....................max_depth=10, n_estimators=400; total time=  13.4s
+[CV] END .....................max_depth=30, n_estimators=300; total time=  13.5s
+[CV] END .....................max_depth=20, n_estimators=300; total time=  13.5s
+[CV] END .....................max_depth=10, n_estimators=400; total time=  13.5s
+[CV] END .....................max_depth=10, n_estimators=500; total time=  16.3s
+[CV] END .....................max_depth=10, n_estimators=500; total time=  16.4s
+[CV] END .....................max_depth=10, n_estimators=500; total time=  16.5s
+[CV] END .....................max_depth=20, n_estimators=400; total time=  16.5s
+[CV] END .....................max_depth=20, n_estimators=400; total time=  16.6s
+[CV] END .....................max_depth=20, n_estimators=400; total time=  16.7s
+[CV] END .....................max_depth=20, n_estimators=200; total time=   8.4s
+[CV] END ...................max_depth=None, n_estimators=200; total time=   8.3s
+[CV] END .....................max_depth=30, n_estimators=400; total time=  16.8s
+[CV] END .....................max_depth=30, n_estimators=200; total time=   8.5s
+[CV] END ...................max_depth=None, n_estimators=200; total time=   8.3s
+[CV] END .....................max_depth=30, n_estimators=400; total time=  16.9s
+[CV] END .....................max_depth=20, n_estimators=200; total time=   8.4s
+[CV] END ...................max_depth=None, n_estimators=200; total time=   8.7s
+[CV] END .....................max_depth=20, n_estimators=500; total time=  20.4s
+[CV] END .....................max_depth=20, n_estimators=500; total time=  20.6s
+[CV] END .....................max_depth=20, n_estimators=500; total time=  20.6s
+[CV] END .....................max_depth=30, n_estimators=200; total time=   8.7s
+[CV] END ...................max_depth=None, n_estimators=300; total time=  12.3s
+[CV] END .....................max_depth=30, n_estimators=200; total time=   8.9s
+[CV] END ...................max_depth=None, n_estimators=300; total time=  12.4s
+[CV] END .....................max_depth=10, n_estimators=300; total time=   9.9s
+[CV] END ...................max_depth=None, n_estimators=300; total time=  12.3s
+[CV] END .....................max_depth=10, n_estimators=200; total time=   6.6s
+[CV] END .....................max_depth=30, n_estimators=400; total time=  16.4s
+[CV] END .....................max_depth=10, n_estimators=300; total time=  10.1s
+[CV] END ...................max_depth=None, n_estimators=400; total time=  16.3s
+[CV] END .....................max_depth=10, n_estimators=300; total time=  10.5s
+[CV] END ...................max_depth=None, n_estimators=400; total time=  16.4s
+[CV] END .....................max_depth=10, n_estimators=200; total time=   6.6s
+[CV] END .....................max_depth=30, n_estimators=500; total time=  20.3s
+[CV] END .....................max_depth=10, n_estimators=200; total time=   6.7s
+[CV] END .....................max_depth=30, n_estimators=500; total time=  20.5s
+[CV] END .....................max_depth=20, n_estimators=200; total time=   8.4s
+[CV] END .....................max_depth=30, n_estimators=500; total time=  20.2s
+[CV] END .....................max_depth=20, n_estimators=300; total time=  12.6s
+[CV] END ...................max_depth=None, n_estimators=400; total time=  16.0s
+[CV] END .....................max_depth=30, n_estimators=300; total time=  12.7s
+[CV] END ...................max_depth=None, n_estimators=500; total time=  19.8s
+[CV] END .....................max_depth=20, n_estimators=300; total time=  12.8s
+[CV] END ...................max_depth=None, n_estimators=500; total time=  20.3s
+[CV] END .....................max_depth=30, n_estimators=300; total time=  12.8s
+[CV] END ...................max_depth=None, n_estimators=500; total time=  20.5s
