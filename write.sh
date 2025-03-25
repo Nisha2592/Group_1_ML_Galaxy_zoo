@@ -1,7 +1,7 @@
 #!/bin/bash 
 
-rm ./data/images/*
+#rm ./data/images/*
 
 mkdir -p ./data/images
-xargs -a image_paths.txt -I {} cp {} ./data/images/
+xargs -a file_list.txt -I {} cp -n /{} ./data/images/
 
